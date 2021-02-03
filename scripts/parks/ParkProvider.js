@@ -7,7 +7,7 @@ export const useParks = () => {
 }
 
 export const getParks = () => {
-    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}`)
+    return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${settings.npsKey}&limit=50&start=0`)
     .then(response => response.json())
     .then(
         parsedParks => {
