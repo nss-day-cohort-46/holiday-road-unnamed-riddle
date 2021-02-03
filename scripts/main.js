@@ -1,7 +1,8 @@
 // Dan Ross Code
+import { useParks, getParks } from './parks/ParkProvider.js'
 
-
-
+getParks()
+.then()
 
 
 // DR--------------
