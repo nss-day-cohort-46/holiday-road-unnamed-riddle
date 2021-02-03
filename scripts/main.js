@@ -6,8 +6,8 @@
 
 // DR--------------
 // Sam Campbell Code 
-
-
+import { getEateries, useEateries } from './eateries/EateryProvider.js'
+getEateries()
 
 
 
