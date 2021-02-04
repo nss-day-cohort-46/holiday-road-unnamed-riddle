@@ -7,6 +7,7 @@ export const useWeather = () => {
   return weather.slice()
 }
 
+//get weather takes a park object that is passed in via the WeatherList function
 export const getWeather = (parkObj) => {
   /*
       Load database state into application state with a fetch().

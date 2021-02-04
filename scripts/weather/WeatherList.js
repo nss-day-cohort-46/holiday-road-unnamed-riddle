@@ -1,8 +1,8 @@
 import { Weather } from "./Weather.js"
 import { getWeather, useWeather } from "./WeatherProvider.js"
 
-
-export const WeatherList = (park, weatherTarget) => {
+// WeatherList takes a parameters of a park object. 
+export const WeatherList = (park) => {
   getWeather(park)
   .then(() => {
     const weatherArray = useWeather()
@@ -21,7 +21,6 @@ const render = weatherCollection => {
   
   for (const weather of weatherCollection) {
     weatherHTMLRep += Weather(weather)
-    // debugger
   }
   
   const weatherTarget = document.querySelector(".parkWeather")
