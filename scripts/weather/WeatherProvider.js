@@ -21,13 +21,14 @@ export const getWeather = (parkObj) => {
     // longitude: -71.01160356,
     // }
 //  the dot notation will be parkObject.data.latitude
+
 return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${parkObj.latitude}&lon=${parkObj.longitude}&exclude=current,minutely,hourly,alerts&units=imperial&appid=${settings.weatherKey}`)
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
     .then(response => response.json())
     .then(parsedResponse => {
       thisWeather = parsedResponse.daily
       weather = thisWeather.splice(0, 5)
-      console.table(weather)
+      // console.table(weather)
     })
 
 }

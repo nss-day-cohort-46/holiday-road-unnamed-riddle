@@ -1,4 +1,5 @@
 import { useParks } from './ParkProvider.js'
+import { WeatherList } from '../weather/WeatherList.js'
 
 const eventHub = document.querySelector('.mainContainer')
 
@@ -18,6 +19,7 @@ eventHub.addEventListener("parkSelected", parkPreviewEvent => {
 
 const previewPark = (park, targetHTML) => {
     let parkActivitiesString = ''
+    const weatherHTML = WeatherList(park)
     
     for (const activity of park.activities) {
         parkActivitiesString +=`
@@ -31,7 +33,8 @@ const previewPark = (park, targetHTML) => {
     ${parkActivitiesString}
     </div>
     <div>Entrance Fee:$${park.entranceFees[0].cost}</div>
+    <div class="parkWeather">${weatherHTML}</div>
+
     <img src="${park.images[0].url}" alt="${park.images[0].altText}">
-    <div class="parkWeather">CALL PARK WEATHER FUNCTION HERE</div>
     `
 }
