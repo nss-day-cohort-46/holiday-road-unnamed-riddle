@@ -1,18 +1,17 @@
 // Dan Ross Code
-import { useParks, getParks } from './parks/ParkProvider.js'
+import { parkSelect } from './parks/ParkSelect.js'
 
-getParks()
-.then()
+
+parkSelect()
 
 
 
 
 // DR--------------
 // Sam Campbell Code 
-import { getEateries, useEateries } from './eateries/EateryProvider.js'
-import { EateriesSelect } from './eateries/EaterySelect.js'
-// getEateries()
-EateriesSelect()
+import { getEateries } from './eateries/EateryProvider.js'
+import './parks/ParkPreview.js'
+getEateries()
 
 
 
