@@ -3,6 +3,23 @@ import { getEateries, useEateries } from './EateryProvider.js'
 const eventHub = document.querySelector(".mainContainer")
 const contentTarget = document.querySelector(".eaterySelect")
 
+// Renders eatery dropdown to DOM 
+const render = eateryCollection => {
+    // debugger
+    const contentTarget = document.querySelector(".eaterySelect")
+      let eats =  eateryCollection.map(eatery => { 
+          return `<option value="${eatery.id}">${eatery.businessName}</option>`
+        }).join("")
+    // console.log(eats)
+    contentTarget.innerHTML = `
+        <label for="eaterySelect">Eateries</label>
+        <select class="dropdown" id="eateryDropdown">
+            <option value="0">Please select an eatery...</option>
+            ${eats}
+        </select>
+    `
+}
+
 export const EateriesSelect = () => {
     getEateries()
     .then( () => {
@@ -11,20 +28,9 @@ export const EateriesSelect = () => {
     })
 }
 
-// Renders eatery dropdown to DOM 
-const render = eateryCollection => {
-    debugger
-    contentTarget.innerHTML = `
-        <select class="dropdown" id="eateryDropdown">
-            <option value="0">Please select an eatery...</option>
-            ${
-                eateryCollection.map(eatery => {
-                    return `<option value="${eatery.id}">${eatery.businessName}</option>`
-                })
-            }
-        </select>
-    `
-}
+
+
+
 
 
 // Listening for eatery to be selected
