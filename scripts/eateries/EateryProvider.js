@@ -7,7 +7,7 @@ export const getEateries = () => {
     .then(response => response.json())
     .then(
         parsedEateries => {
-            console.table(parsedEateries)
+            // console.log(parsedEateries)
             eateries = parsedEateries
         })
 }
