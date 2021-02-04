@@ -10,7 +10,9 @@ getParks()
 // DR--------------
 // Sam Campbell Code 
 import { getEateries, useEateries } from './eateries/EateryProvider.js'
-getEateries()
+import { EateriesSelect } from './eateries/EaterySelect.js'
+// getEateries()
+EateriesSelect()
 
 
 
@@ -27,6 +29,7 @@ getWeather()
 
 // Cheo Roman
 import { LoadAttractions } from "./attractions/AttractionProvider.js"
+
 
 LoadAttractions()
 
