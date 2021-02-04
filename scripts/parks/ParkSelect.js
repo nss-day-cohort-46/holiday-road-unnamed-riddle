@@ -35,6 +35,14 @@ eventHub.addEventListener("change", changeEvent => {
 eventHub.addEventListener("parkSelected", parkPreviewEvent => {
     const previewTarget = document.querySelector('.parkPreview')
     if (parkPreviewEvent.detail !== "0") {
+        const parksArray = useParks()
+        const parkID = parkPreviewEvent.detail.chosenPark
+        
+        previewPark(selectedPark, previewTarget)
         previewTarget.innerHTML = `${parkPreviewEvent.detail.chosenPark}`
     }
 })
+
+const previewPark = (park, targetHTML) => {
+    targetHTML.innerHTML = 
+}
