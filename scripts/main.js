@@ -22,11 +22,10 @@ getEateries()
 
 
 // AP--------------
-// Cheo RomanCode 
 
+// Cheo Roman
+import { LoadAttractions } from "./attractions/AttractionProvider.js"
 
-
-
-
+LoadAttractions()
 
 // CR--------------
