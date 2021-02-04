@@ -38,3 +38,14 @@ export const LoadAttractions = () => {
    _render(parsedAttractions)
   })
 } // LoadAttractions
+
+
+const eventHub = document.querySelector(".mainContainer")
+
+eventHub.addEventListener ("change", changeEvent => {
+  if(changeEvent.target.id === "attraction-select") {
+    const option = parseInt(changeEvent.target.value)
+    
+    
+  } 
+})
