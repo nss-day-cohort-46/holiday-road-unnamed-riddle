@@ -45,8 +45,9 @@ const _render = (attractionCollection) => {
 
   // only fire after options loaded
   eventHub.addEventListener("change", changeEvent => {
-
-    if(changeEvent.target.id === "attraction-select") {
+    
+    // selecting by target.id results
+    if(changeEvent.target.value !== "0") { //"attraction-select") {
       const customEvent = new CustomEvent("attractionsLoaded", {
         detail: {
           attractionsLoaded: true,
