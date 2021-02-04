@@ -9,7 +9,8 @@ parkSelect()
 
 // DR--------------
 // Sam Campbell Code 
-import { getEateries, useEateries } from './eateries/EateryProvider.js'
+import { getEateries } from './eateries/EateryProvider.js'
+import './parks/ParkPreview.js'
 getEateries()
 
 

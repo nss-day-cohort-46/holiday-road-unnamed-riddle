@@ -1,7 +1,7 @@
 import { getParks, useParks } from './ParkProvider.js'
 
 const eventHub = document.querySelector('.mainContainer')
-const contentTarget = document.querySelector('.mainContainer')
+const contentTarget = document.querySelector('.parkSelect')
 
 export const parkSelect = () => {
     getParks()
@@ -32,24 +32,3 @@ eventHub.addEventListener("change", changeEvent => {
     }
 })
 
-eventHub.addEventListener("parkSelected", parkPreviewEvent => {
-    const previewTarget = document.querySelector('.parkPreview')
-    if (parkPreviewEvent.detail.chosenPark !== "0") {
-        const parksArray = useParks()
-        const parkID = parkPreviewEvent.detail.chosenPark
-        const selectedPark = parksArray.find(parkObject => {
-            return parkObject.id === parkID
-        })
-
-        previewPark(selectedPark, previewTarget)
-    }
-})
-
-const previewPark = (park, targetHTML) => {
-    targetHTML.innerHTML =`
-    <div class="parkPreview__name">${park.fullName}</div>
-    <div>State: ${park.states}</div>
-    <div>Activities: ${park.activities}
-    <div>Entrance Fee: ${park.entranceFees.cost}</div>
-    `
-}
