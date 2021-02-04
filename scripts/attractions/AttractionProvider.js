@@ -13,24 +13,22 @@ export const getAttractions = () => {
   .then(parsedAttractions => {
    _attractions = parsedAttractions
   })
-}
+} // getAttractions
 
 const _render = (attractionCollection) => {
  const targetElement = document.querySelector(".mainContainer")
- const attractions = attractionCollection.map((attraction) => {
-  return `
-   <section class="attraction__section">
-    <h2>Attractions</h2>
-    <div>
-     <p>${attraction.name}</p>
-     <p>${attraction.city}, ${attraction.state}</p>
-     <p>${attraction.description}</p>
-    </div>
-   </section>
-  `
- }).join("")
+ 
+ let attractions = attractionCollection.map((attraction) => {
+   return `<option value=${attraction.id}>${attraction.name}</option>`    
+  }).join("")
 
- targetElement.innerHTML += `${attractions}`
+  targetElement.innerHTML += `
+    <label for="attraction-select">Choose attraction:</label>
+    <select name="attractions" id="attraction-select">
+      <option value="0">--Please select an attractoin--</option>
+      ${attractions}
+    </select>
+  `
 } // _render
 
 export const LoadAttractions = () => {
@@ -39,4 +37,4 @@ export const LoadAttractions = () => {
    const parsedAttractions = useAttractions()
    _render(parsedAttractions)
   })
-}
+} // LoadAttractions
