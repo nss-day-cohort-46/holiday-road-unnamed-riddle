@@ -35,7 +35,7 @@ const _render = (attractionCollection) => {
  let attractions = attractionCollection.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`).join("")
 
   targetElement.innerHTML += `
-    <label for="attraction-select">Choose attraction:</label>
+    <label for="attraction-select">Bizzararies:</label>
     <select name="attractions" id="attraction-select" class="selectAttraction">
       <option value="0" class="test">--Please select an attractoin--</option>
       ${attractions}
