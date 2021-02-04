@@ -37,7 +37,7 @@ const _render = (attractionCollection) => {
   targetElement.innerHTML += `
     <label for="attraction-select">Bizzararies:</label>
     <select name="attractions" id="attraction-select" class="selectAttraction">
-      <option value="0" class="test">--Please select an attractoin--</option>
+      <option value="0" class="test">Select an attraction--</option>
       ${attractions}
     </select>
     <div class="attractionPreview"></div>
@@ -47,7 +47,7 @@ const _render = (attractionCollection) => {
   eventHub.addEventListener("change", changeEvent => {
     
     // selecting by target.id results
-    if(changeEvent.target.value !== "0") { //"attraction-select") {
+    if(changeEvent.target.value !== "0" && changeEvent.target.id === "attraction-select") {
       const customEvent = new CustomEvent("attractionsLoaded", {
         detail: {
           attractionsLoaded: true,
