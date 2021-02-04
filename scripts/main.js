@@ -5,6 +5,8 @@ getParks()
 .then()
 
 
+
+
 // DR--------------
 // Sam Campbell Code 
 import { getEateries, useEateries } from './eateries/EateryProvider.js'
@@ -15,8 +17,8 @@ getEateries()
 
 // SC--------------
 // Alex Prieu Code 
-
-
+import { getWeather } from "./weather/WeatherProvider.js";
+getWeather()
 
 
 
