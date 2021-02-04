@@ -1,6 +1,6 @@
 // Dan Ross Code
 import { parkSelect } from './parks/ParkSelect.js'
-
+import "./parks/ParkPreview.js"
 
 parkSelect()
 
@@ -10,8 +10,9 @@ parkSelect()
 // DR--------------
 // Sam Campbell Code 
 import { getEateries } from './eateries/EateryProvider.js'
-import './parks/ParkPreview.js'
+import { EateriesSelect } from './eateries/EaterySelect.js'
 getEateries()
+EateriesSelect()
 
 
 

@@ -1,42 +1,71 @@
+import { Attraction } from "./Attraction.js"
 /*
  Bizarrieres
 */
 
 let _attractions = []
+const _url = "http://holidayroad.nss.team/bizarreries"
+const eventHub = document.querySelector(".mainContainer")
+
 
 export const useAttractions = () => _attractions.slice()
 
+
 export const getAttractions = () => {
- const url = "http://holidayroad.nss.team/bizarreries"
-  return fetch(url)
+  return fetch(_url)
   .then(response => response.json())
   .then(parsedAttractions => {
    _attractions = parsedAttractions
   })
-}
+} // getAttractions
 
-const _render = (attractionCollection) => {
- const targetElement = document.querySelector(".mainContainer")
- const attractions = attractionCollection.map((attraction) => {
-  return `
-   <section class="attraction__section">
-    <h2>Attractions</h2>
-    <div>
-     <p>${attraction.name}</p>
-     <p>${attraction.city}, ${attraction.state}</p>
-     <p>${attraction.description}</p>
-    </div>
-   </section>
-  `
- }).join("")
-
- targetElement.innerHTML += `${attractions}`
-} // _render
 
 export const LoadAttractions = () => {
  getAttractions()
-  .then(() => {
+  .then(() => { 
    const parsedAttractions = useAttractions()
    _render(parsedAttractions)
   })
-}
+} // LoadAttractions
+
+
+const _render = (attractionCollection) => {
+ const targetElement = document.querySelector(".attractionSelect")
+ 
+ let attractions = attractionCollection.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`).join("")
+
+  targetElement.innerHTML += `
+    <label for="attraction-select">Bizzararies:</label>
+    <select name="attractions" id="attraction-select" class="selectAttraction">
+      <option value="0" class="test">Select an attraction--</option>
+      ${attractions}
+    </select>
+    <div class="attractionPreview"></div>
+  `
+
+  // only fire after options loaded
+  eventHub.addEventListener("change", changeEvent => {
+    
+    // selecting by target.id results
+    if(changeEvent.target.value !== "0" && changeEvent.target.id === "attraction-select") {
+      const customEvent = new CustomEvent("attractionsLoaded", {
+        detail: {
+          attractionsLoaded: true,
+          attractionId: parseInt(changeEvent.target.value)
+        }
+      })
+      eventHub.dispatchEvent(customEvent)
+    } // if
+  }) // eventHub
+} // _render
+
+
+eventHub.addEventListener ("attractionsLoaded", changeEvent => {
+  if(changeEvent.detail.attractionsLoaded) {
+    const attractionId = changeEvent.detail.attractionId
+    const targetElement = document.querySelector(".attractionPreview")
+    const attraction = useAttractions().find((attraction) => attraction.id === attractionId)
+    
+    targetElement.innerHTML = `${Attraction(attraction)}`
+  } 
+})
