@@ -18,8 +18,9 @@ getEateries()
 // SC--------------
 // Alex Prieu Code 
 import { getWeather } from "./weather/WeatherProvider.js";
+import { WeatherList } from './weather/WeatherList.js';
 getWeather()
-
+WeatherList()
 
 
 
@@ -28,6 +29,7 @@ getWeather()
 // Cheo Roman
 import { LoadAttractions } from "./attractions/AttractionProvider.js"
 
-LoadAttractions()
+
+// LoadAttractions()
 
 // CR--------------
