@@ -2,6 +2,7 @@ import { settings } from '../Settings.js'
 
 let parks = []
 
+
 export const useParks = () => {
     return parks.slice()
 }
@@ -11,8 +12,7 @@ export const getParks = () => {
     .then(response => response.json())
     .then(
         parsedParks => {
-            console.table(parsedParks)
-            parks = parsedParks
+            parks = parsedParks.data
         }
     )
 }

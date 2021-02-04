@@ -1,8 +1,8 @@
 // Dan Ross Code
-import { useParks, getParks } from './parks/ParkProvider.js'
+import { parkSelect } from './parks/ParkSelect.js'
 
-getParks()
-.then()
+
+parkSelect()
 
 
 
