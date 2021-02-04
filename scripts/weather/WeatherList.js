@@ -30,3 +30,7 @@ const render = weatherCollection => {
         ${weatherHTMLRep}
         </section>`
     }
+
+
+    // add event listener that listens for previewDetailsLoaded then runs a check on the selected park
+    // and uses that object as a parameter for WeatherList

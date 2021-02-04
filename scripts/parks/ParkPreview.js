@@ -41,5 +41,8 @@ const previewPark = (park, targetHTML) => {
     <img src="${park.images[0].url}" alt="${park.images[0].altText}" title="${park.images[0].caption}" class="parkPreview__image">
     `
     // invoke WeatherList with the park object to render the weather data to the preview card
+
+        // MAYBE?? REMOVE this invocation of WeatherList, broadcast NEW event for previewDetailsLoaded, listen for event in WeatherList
+
     WeatherList(park)
 }
