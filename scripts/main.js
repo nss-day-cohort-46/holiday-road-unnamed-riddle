@@ -30,6 +30,6 @@ WeatherList()
 import { LoadAttractions } from "./attractions/AttractionProvider.js"
 
 
-// LoadAttractions()
+LoadAttractions()
 
 // CR--------------
