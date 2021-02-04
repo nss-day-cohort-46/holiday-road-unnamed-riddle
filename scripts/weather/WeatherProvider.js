@@ -2,8 +2,8 @@ import { settings } from "/scripts/Settings.js"
 // import { parkObj } from ".js"
 // *!*!*!*!*!*!*!*!*!
 
+let thisWeather = []
 let weather = []
-
 export const useWeather = () => {
   return weather.slice()
 }
@@ -25,7 +25,8 @@ return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${parkObj.lati
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
     .then(response => response.json())
     .then(parsedResponse => {
-      weather = parsedResponse.daily
+      thisWeather = parsedResponse.daily
+      weather = thisWeather.splice(0, 5)
       console.table(weather)
     })
 
