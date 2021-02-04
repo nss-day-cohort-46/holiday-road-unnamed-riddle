@@ -20,8 +20,9 @@ EateriesSelect()
 // SC--------------
 // Alex Prieu Code 
 import { getWeather } from "./weather/WeatherProvider.js";
+import { WeatherList } from './weather/WeatherList.js';
 getWeather()
-
+WeatherList()
 
 
 
