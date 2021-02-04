@@ -1,7 +1,7 @@
 import { Weather } from "./Weather.js"
 import { getWeather, useWeather } from "./WeatherProvider.js"
 
-const npsWeatherTarget = document.querySelector(".mainContainer")
+// const npsWeatherTarget = document.querySelector(".mainContainer")
 
 export const WeatherList = () => {
   getWeather()
