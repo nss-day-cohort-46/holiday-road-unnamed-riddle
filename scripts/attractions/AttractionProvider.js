@@ -40,8 +40,8 @@ const _render = (attractionCollection) => {
       <option value="0" class="test">Select an attraction--</option>
       ${attractions}
     </select>
-    <div class="attractionPreview"></div>
-  `
+    `
+    // <div class="attractionPreview"></div>
 
   // only fire after options loaded
   eventHub.addEventListener("change", changeEvent => {
@@ -64,6 +64,8 @@ eventHub.addEventListener ("attractionsLoaded", changeEvent => {
   if(changeEvent.detail.attractionsLoaded) {
     const attractionId = changeEvent.detail.attractionId
     const targetElement = document.querySelector(".attractionPreview")
+    console.log("taret element")
+    console.log(targetElement)
     const attraction = useAttractions().find((attraction) => attraction.id === attractionId)
     
     targetElement.innerHTML = `${Attraction(attraction)}`
