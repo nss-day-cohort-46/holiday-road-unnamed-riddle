@@ -1,4 +1,4 @@
-.parkPreview__image {
+.park__image {
     width: 100%
 }
 
@@ -8,7 +8,12 @@
 }
 
 /* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
-.showDetail {
+.parkDetail {
     display: flex;
+    flex-direction: column;
     background-color: burlywood;
+}
+
+.park__activities {
+    columns: 160px 2;
 }
