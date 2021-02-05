@@ -62,10 +62,9 @@ const _render = (attractionCollection) => {
 
 eventHub.addEventListener ("attractionsLoaded", changeEvent => {
   if(changeEvent.detail.attractionsLoaded) {
+  
     const attractionId = changeEvent.detail.attractionId
     const targetElement = document.querySelector(".attractionPreview")
-    console.log("taret element")
-    console.log(targetElement)
     const attraction = useAttractions().find((attraction) => attraction.id === attractionId)
     
     targetElement.innerHTML = `${Attraction(attraction)}`
