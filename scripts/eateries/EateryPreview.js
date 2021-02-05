@@ -22,7 +22,8 @@ const renderPreview = eateryObj => {
   //       }
         contentTarget.innerHTML = `
           <h3>Eatery</h3>
-          <p>${eateryObj.businessName}</p>`
+          <p>${eateryObj.businessName}</p>
+          <button id ="eateryDetails">Details</button>`
           
 }
   
@@ -36,4 +37,14 @@ eventHub.addEventListener("eateryChosen", event => {
 
        renderPreview(selectedEatery)
     }
+})
+
+// Listening for eateryDetails button to be clicked
+eventHub.addEventListener("click", event => {
+  if (event.target.id === "eateryDetails"){
+    const customEvent = new CustomEvent("eateryDetailsClick", {
+      
+  })
+  eventHub.dispatchEvent(customEvent)
+}
 })
