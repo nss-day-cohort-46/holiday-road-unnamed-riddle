@@ -17,15 +17,16 @@ const render = (parksArray) => {
     <select name="parkSelect" class="dropDown" id="parkSelect">
     <option value="0">Select a Park...</option>
     ${parksArray.map(parkObject => `<option value="${parkObject.id}">${parkObject.fullName}</option>`)} 
-    </select>
-    <div class="parkPreview"></div>`
+    </select>`
 }
 
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "parkSelect") {
+        const selection = changeEvent.target
         const parkSelected = new CustomEvent("parkSelected", {
             detail: { 
-                chosenPark: changeEvent.target.value
+                chosenParkId: selection.value,
+                chosenParkName: selection.options[selection.selectedIndex].text
             }
         })   
         eventHub.dispatchEvent(parkSelected)
