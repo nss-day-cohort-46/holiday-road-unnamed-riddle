@@ -10,7 +10,7 @@
 .weather {
     display: flex;
     width: 100%;
-    padding: .1em;
+    padding: .25em;
     font-size: 9pt;
     text-align: center;
 }
