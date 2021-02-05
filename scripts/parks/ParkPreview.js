@@ -9,11 +9,10 @@ eventHub.addEventListener("parkSelected", parkPreviewEvent => {
     const previewTarget = document.querySelector('.parkPreview')
     if (parkPreviewEvent.detail.chosenPark !== "0") {
         const parksArray = useParks()
-        const parkID = parkPreviewEvent.detail.chosenPark
+        const parkID = parkPreviewEvent.detail.chosenParkId
         const selectedPark = parksArray.find(parkObject => {
             return parkObject.id === parkID
         })
-
         previewPark(selectedPark, previewTarget)
     }
 })

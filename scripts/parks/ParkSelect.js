@@ -23,9 +23,11 @@ const render = (parksArray) => {
 
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "parkSelect") {
+        const selection = changeEvent.target
         const parkSelected = new CustomEvent("parkSelected", {
             detail: { 
-                chosenPark: changeEvent.target.value
+                chosenParkId: selection.value,
+                chosenParkName: selection.options[selection.selectedIndex].text
             }
         })   
         eventHub.dispatchEvent(parkSelected)
