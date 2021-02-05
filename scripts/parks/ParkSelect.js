@@ -17,8 +17,7 @@ const render = (parksArray) => {
     <select name="parkSelect" class="dropDown" id="parkSelect">
     <option value="0">Select a Park...</option>
     ${parksArray.map(parkObject => `<option value="${parkObject.id}">${parkObject.fullName}</option>`)} 
-    </select>
-    <div class="parkPreview"></div>`
+    </select>`
 }
 
 eventHub.addEventListener("change", changeEvent => {

@@ -29,7 +29,6 @@ return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${parkObj.lati
     .then(parsedResponse => {
       thisWeather = parsedResponse.daily
       weather = thisWeather.splice(0, 5)
-      // console.table(weather)
     })
 
 }

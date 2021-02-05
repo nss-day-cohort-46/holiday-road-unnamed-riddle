@@ -1,7 +1,7 @@
 import { getEateries, useEateries } from './EateryProvider.js'
 
 const eventHub = document.querySelector(".mainContainer")
-const contentTarget = document.querySelector(".eaterySelect")
+// const contentTarget = document.querySelector(".eaterySelect")
 
 // Renders eatery dropdown to DOM 
 const render = eateryCollection => {
@@ -34,15 +34,17 @@ export const EateriesSelect = () => {
 
 
 // Listening for eatery to be selected
-// eventHub.addEventListener("change", event => {
-//     if (event.target.id === "eateries") {
-//         const customEvent = new CustomEvent("eateryChosen", {
-//             detail: {
-//                 eateryThatWasChosen: event.target.value
-//             }
-//         })
+eventHub.addEventListener("change", changeEvent => {
+    if (changeEvent.target.id === "eateryDropdown") {
+        const selectedEatery = changeEvent.target.value
+        const customEvent = new CustomEvent("eateryChosen", {
+            detail: {
+                eateryChosen: true,
+                eateryThatWasChosen: parseInt(selectedEatery)
+            }
+        })
 
-//         // Dispatch to event hub
-//         eventHub.dispatchEvent(customEvent)
-//     }
-// })
+        // Dispatch to event hub
+        eventHub.dispatchEvent(customEvent)
+    }
+})

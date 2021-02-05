@@ -13,7 +13,7 @@ import { getEateries } from './eateries/EateryProvider.js'
 import { EateriesSelect } from './eateries/EaterySelect.js'
 getEateries()
 EateriesSelect()
-
+import './eateries/EateryPreview.js'
 
 
 

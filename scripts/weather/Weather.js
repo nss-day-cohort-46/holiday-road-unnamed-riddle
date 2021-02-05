@@ -1,6 +1,5 @@
 
 export const Weather = (weatherObj) => {
-    console.log(weatherObj)
     return `
     <div class="weather">
         <p class="day">Day: ${new Date(weatherObj.dt * 1000).toLocaleDateString('en-US')}</P>
