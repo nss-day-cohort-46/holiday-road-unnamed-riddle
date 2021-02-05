@@ -7,6 +7,12 @@
     display: none;
 }
 
+.parkPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
 .parkDetail {
     display: flex;
@@ -14,6 +20,26 @@
     background-color: burlywood;
 }
 
+.weatherList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.weather {
+    flex: 0 1 30%;
+}
+
+/* this rule targets all h3 tags that children of elements with the class parkWeather */
+.parkWeather >h3 {
+    text-align: center;
+}
+
 .park__activities {
     columns: 160px 2;
+}
+
+#parkDetail__Button {
+ width: 35%;
+ text-align: center;
 }

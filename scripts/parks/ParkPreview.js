@@ -29,7 +29,8 @@ const previewPark = (park, targetHTML) => {
     
     // add html to dom for the preview card
     targetHTML.innerHTML =`
-    <div class="parkPreview__name">Park Selected: ${park.fullName}</div>
+    <h3>Park Selected:</h3>
+    <div class="parkPreview__name">${park.fullName}</div>
     <div class="parkWeather"></div>
     <button id="parkDetail__Button">Park Details</button>
     <div id="parkDetail" class="hidden">
