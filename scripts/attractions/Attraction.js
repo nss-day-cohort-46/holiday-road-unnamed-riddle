@@ -1,7 +1,7 @@
 export const Attraction = (attraction) => {
  return `
  <section id=${attraction.id}>
-  <h3>Attraction<h3>
+  <h3>Attraction</h3>
   <div>
    <p>${attraction.name}</p>
   </div>
