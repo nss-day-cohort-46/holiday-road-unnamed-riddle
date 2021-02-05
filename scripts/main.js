@@ -13,7 +13,7 @@ import { getEateries } from './eateries/EateryProvider.js'
 import { EateriesSelect } from './eateries/EaterySelect.js'
 getEateries()
 EateriesSelect()
-
+import './eateries/EateryPreview.js'
 
 
 
@@ -21,8 +21,8 @@ EateriesSelect()
 // Alex Prieu Code 
 import { getWeather } from "./weather/WeatherProvider.js";
 import { WeatherList } from './weather/WeatherList.js';
-getWeather()
-WeatherList()
+// getWeather()
+// WeatherList()
 
 
 
