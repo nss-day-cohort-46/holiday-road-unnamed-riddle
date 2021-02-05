@@ -50,8 +50,15 @@ const previewPark = (park, targetHTML) => {
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "parkDetail__Button") {
-        console.log("park details button clicked")
+        const buttonText = clickEvent.target
         const parkDetailSection = document.querySelector("#parkDetail")
         parkDetailSection.classList.toggle("showDetail")
+        console.log(buttonText.innerHTML)
+
+        if (buttonText.innerHTML === "Park Details") {
+            buttonText.innerHTML = "Hide Details"
+        } else {
+            buttonText.innerHTML = "Park Details"
+        }
     }
 })
