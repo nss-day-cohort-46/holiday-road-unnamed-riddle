@@ -25,7 +25,7 @@ const render = weatherCollection => {
   
   const weatherTarget = document.querySelector(".parkWeather")
       weatherTarget.innerHTML = `
-        <h3>Weather</h3>
+        <h3>5 Day Forecast</h3>
         <section class="weatherList">
         ${weatherHTMLRep}
         </section>`
