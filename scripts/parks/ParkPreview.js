@@ -29,15 +29,17 @@ const previewPark = (park, targetHTML) => {
     
     // add html to dom for the preview card
     targetHTML.innerHTML =`
-    <div class="parkPreview__name">Park Selected ${park.fullName}</div>
-    <div>State: ${park.states}</div>
-    <div>Activities:
-    ${parkActivitiesString}
-    </div>
-    <div>Entrance Fee:$${park.entranceFees[0].cost}</div>
+    <div class="parkPreview__name">Park Selected: ${park.fullName}</div>
     <div class="parkWeather"></div>
-    
-    <img src="${park.images[0].url}" alt="${park.images[0].altText}" title="${park.images[0].caption}" class="parkPreview__image">
+    <button id="parkDetail__Button">Park Details</button>
+    <div id="parkDetail" class="hidden">
+        <div>State: ${park.states}</div>
+        <div>Activities:
+        ${parkActivitiesString}
+        </div>
+        <div>Entrance Fee:$${park.entranceFees[0].cost}</div>
+        <img src="${park.images[0].url}" alt="${park.images[0].altText}" title="${park.images[0].caption}" class="parkPreview__image">
+    </div>
     `
     // invoke WeatherList with the park object to render the weather data to the preview card
 
@@ -45,3 +47,11 @@ const previewPark = (park, targetHTML) => {
 
     WeatherList(park)
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "parkDetail__Button") {
+        console.log("park details button clicked")
+        const parkDetailSection = document.querySelector("#parkDetail")
+        parkDetailSection.classList.toggle("showDetail")
+    }
+})

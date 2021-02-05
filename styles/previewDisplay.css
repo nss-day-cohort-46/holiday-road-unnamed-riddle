@@ -1,3 +1,12 @@
 .parkPreview__image {
     width: 100%
 }
+
+.hidden {
+    display: none;
+}
+
+.showDetail {
+    display: flex;
+    background-color: burlywood;
+}
