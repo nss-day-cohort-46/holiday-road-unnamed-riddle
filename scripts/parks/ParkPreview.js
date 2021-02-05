@@ -48,6 +48,7 @@ const previewPark = (park, targetHTML) => {
     WeatherList(park)
 }
 
+// event listner for displaying park details
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "parkDetail__Button") {
         const buttonText = clickEvent.target

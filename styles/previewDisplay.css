@@ -2,10 +2,12 @@
     width: 100%
 }
 
+/* this hidden rule was added by Dan for the Park Detail section */
 .hidden {
     display: none;
 }
 
+/* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
 .showDetail {
     display: flex;
     background-color: burlywood;
