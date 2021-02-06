@@ -38,13 +38,14 @@ const previewPark = (park, targetHTML) => {
     <div class="parkWeather"></div>
     <button id="parkDetail__Button">Park Details</button>
     <div id="parkDetail" class="hidden">
-        <div class="park__state">State: ${park.states}</div>
-        <div class="park__fee">Entrance Fee:$${park.entranceFees[0].cost}</div>
-        <div class="park__activities">Activities: ${parkActivitiesHTMLString}</div>
-        <img src="${park.images[0].url}" alt="${park.images[0].altText}" title="${park.images[0].caption}" class="park__image">
+        <div class="park__state"><b>State: </b>${park.states}</div>
+        <div class="park__fee"><b>Entrance Fee: </b>$${park.entranceFees[0].cost}</div>
+        <h4>Activities:</h4>
+        <div class="park__activities">${parkActivitiesHTMLString}</div>
+        <img src="${park.images[0].url}" alt="${park.images[0].altText}" class="park__image">
+        <div class="park__imageDescription">Photo description: ${park.images[0].caption}</div>
     </div>
     `
-
 
     WeatherList(park)
 }

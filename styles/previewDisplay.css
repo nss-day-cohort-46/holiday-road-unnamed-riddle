@@ -18,19 +18,18 @@
 .parkDetail {
     display: flex;
     flex-direction: column;
-    background-color: burlywood;
+    background-color: rgb(120, 128, 136);
+    border-radius: 5pt;
+    padding: .25em;
 }
-
-/* this rule targets all h3 tags that children of elements with the class parkWeather */
-/* .parkWeather >h3 {
-    text-align: center;
-} */
 
 .park__activities {
     columns: auto 2;
 }
 
 #parkDetail__Button {
-    width: 50%;
+    width: 90%;
+    margin: .5em 0;
     text-align: center;
+    border-radius: 5pt;
 }

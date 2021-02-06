@@ -4,7 +4,7 @@
 }
 .weatherList {
     display: flex;
-    background-color: slategray;
+    background-color: rgb(120, 128, 136);
     border-radius: 5pt;
 }
 .weather {
@@ -19,3 +19,7 @@
     border-radius: 5pt;
 }
 
+/* this rule targets all h3 tags that children of elements with the class parkWeather -DAN */ 
+.parkWeather >h3 {
+    text-align: center;
+}
