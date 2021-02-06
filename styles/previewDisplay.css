@@ -30,11 +30,7 @@
     columns: auto 2;
 }
 
-.park__activities-none {
-    columns: 1
-}
-
 #parkDetail__Button {
- width: 35%;
- text-align: center;
+    width: 50%;
+    text-align: center;
 }
