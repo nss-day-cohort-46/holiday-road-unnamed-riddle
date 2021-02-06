@@ -14,5 +14,11 @@
 }
 
 .showAttractionDetail {
-  background: red;
+  background: rgb(158, 152, 152);
+  border: 1px solid black;
+  padding: 1em;
+}
+
+#attraction__button {
+  margin-top: 5px;
 }
