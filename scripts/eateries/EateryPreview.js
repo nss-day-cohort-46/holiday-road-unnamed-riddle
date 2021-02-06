@@ -15,19 +15,26 @@ const contentTarget = document.querySelector('.eateryPreview')
 // }
        
 const renderPreview = eateryObj => {
-  let eateryHTML = ""
-  // for (const eateryName of eateryObj.businessName) {
-  //         eateryHTML += `${eateryObj.businessName}`
+  // let eateryHTML = ""
+  // for (const eatery in eateryObj) {
+  //         eateryHTML += Eatery(eatery)
+  //         }
+        contentTarget.innerHTML = 
+        `
+        <h3 class=eateryPreview_Name>Eatery Selected: ${eateryObj.businessName}</h3>
+        <div id="eateryDetail" class="hidden">
           
-  //       }
-        contentTarget.innerHTML = `
-          <h3>Eatery</h3>
-          <p>${eateryObj.businessName}</p>
-          <button id ="eateryDetails">Details</button>`
+          <h4 class="eateryLocation">${eateryObj.city}, ${eateryObj.state}</h4>
+          <h4 class="eateryWifi">Has Wifi: ${eateryObj.ameneties.wifi}</h4>
+          <h4 class="eateryRestrooms">Has restroom: ${eateryObj.ameneties.restrooms}</h4>
+          <p class="eateryDescription">${eateryObj.description}</p>
+        </div>
+        <button id ="eateryDetailsButton">Details</button>
+            `
           
 }
   
-
+// Listening for eatery to be selected 
 eventHub.addEventListener("eateryChosen", event => {
     // const contentTarget = document.querySelector('.eateryPreview')
     if (event.detail.eateryThatWasChosen !== "0") {
@@ -41,10 +48,15 @@ eventHub.addEventListener("eateryChosen", event => {
 
 // Listening for eateryDetails button to be clicked
 eventHub.addEventListener("click", event => {
-  if (event.target.id === "eateryDetails"){
-    const customEvent = new CustomEvent("eateryDetailsClick", {
-      
-  })
-  eventHub.dispatchEvent(customEvent)
+  if (event.target.id === "eateryDetailsButton"){
+    const buttonText = event.target
+    const eateryDetail = document.querySelector("#eateryDetail")
+    eateryDetail.classList.toggle("showEateryDetail")
+
+    if(buttonText.innerHTML === "Details"){
+      buttonText.innerHTML = "Hide Details"
+    } else {
+      buttonText.innerHTML = "Details"
+    }
 }
 })
