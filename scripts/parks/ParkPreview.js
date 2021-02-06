@@ -27,7 +27,7 @@ const previewPark = (park, targetHTML) => {
     } else {
         for (const activity of park.activities) {
             parkActivitiesHTMLString += `
-            <li>${activity.name}</li>`
+            <li class="park__activity">${activity.name}</li>`
         }
     }
 
@@ -38,12 +38,19 @@ const previewPark = (park, targetHTML) => {
     <div class="parkWeather"></div>
     <button id="parkDetail__Button">Park Details</button>
     <div id="parkDetail" class="hidden">
-        <div class="park__state"><b>State: </b>${park.states}</div>
-        <div class="park__fee"><b>Entrance Fee: </b>$${park.entranceFees[0].cost}</div>
-        <h4>Activities:</h4>
-        <div class="park__activities">${parkActivitiesHTMLString}</div>
-        <img src="${park.images[0].url}" alt="${park.images[0].altText}" class="park__image">
-        <div class="park__imageDescription">Photo description: ${park.images[0].caption}</div>
+        <div class="park__info">
+            <div class="park__state"><b>State: </b>${park.states}</div>
+            <div class="park__fee"><b>Entrance Fee: </b>$${park.entranceFees[0].cost}</div>
+            <div class="activityTitle"><b>Activities: </b></div>
+            <div class="park__activitiesContainer">
+                <ul class="park_activitiesList">${parkActivitiesHTMLString}</ul>
+            </div>
+        </div>
+        <div class="park__imageContainer">
+            <img src="${park.images[0].url}" alt="${park.images[0].altText}" class="park__image">
+            <div class="park__imageDescription"><b>Photo description: </b>${park.images[0].caption}</div>
+        </div>
+
     </div>
     `
 
