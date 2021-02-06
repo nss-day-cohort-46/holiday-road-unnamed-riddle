@@ -20,15 +20,19 @@ eventHub.addEventListener("parkSelected", parkPreviewEvent => {
 // previewPark generates html for the preview card
 const previewPark = (park, targetHTML) => {
     let parkActivitiesHTMLString = ''
-    
+
     // iterate of array of park activities and generate html to append to dom
-    for (const activity of park.activities) {
-        parkActivitiesHTMLString +=`
-        <li>${activity.name}</li>`
+    if (park.activities.length === 0) {
+        parkActivitiesHTMLString = "No Activites Available"
+    } else {
+        for (const activity of park.activities) {
+            parkActivitiesHTMLString += `
+            <li>${activity.name}</li>`
+        }
     }
-    
+
     // add html to dom for the preview card
-    targetHTML.innerHTML =`
+    targetHTML.innerHTML = `
     <h3>Park Selected:</h3>
     <div class="parkPreview__name">${park.fullName}</div>
     <div class="parkWeather"></div>
@@ -40,9 +44,7 @@ const previewPark = (park, targetHTML) => {
         <img src="${park.images[0].url}" alt="${park.images[0].altText}" title="${park.images[0].caption}" class="park__image">
     </div>
     `
-    // invoke WeatherList with the park object to render the weather data to the preview card
 
-        // MAYBE?? REMOVE this invocation of WeatherList, broadcast NEW event for previewDetailsLoaded, listen for event in WeatherList
 
     WeatherList(park)
 }

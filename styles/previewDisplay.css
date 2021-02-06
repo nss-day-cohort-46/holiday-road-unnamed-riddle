@@ -1,5 +1,6 @@
 .park__image {
-    width: 100%
+    width: 75%;
+    margin: 0 auto;
 }
 
 /* this hidden rule was added by Dan for the Park Detail section */
@@ -20,23 +21,17 @@
     background-color: burlywood;
 }
 
-.weatherList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.weather {
-    flex: 0 1 30%;
-}
-
 /* this rule targets all h3 tags that children of elements with the class parkWeather */
-.parkWeather >h3 {
+/* .parkWeather >h3 {
     text-align: center;
-}
+} */
 
 .park__activities {
-    columns: 160px 2;
+    columns: auto 2;
+}
+
+.park__activities-none {
+    columns: 1
 }
 
 #parkDetail__Button {
