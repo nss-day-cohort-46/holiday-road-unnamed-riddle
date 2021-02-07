@@ -1,24 +1,14 @@
 import { getEateries, useEateries } from "./EateryProvider.js"
-import { Eatery } from './Eatery.js'
+
 
 
 const eventHub = document.querySelector('.mainContainer')
 const contentTarget = document.querySelector('.eateryPreview')
 
-// export const EateryPreview = () => {
-//     getEateries()
-//       .then(() => {
-//         const eatery = useEateries()
-//         renderPreview(eatery)
-        
-//       })
-// }
+
        
 const renderPreview = eateryObj => {
-  // let eateryHTML = ""
-  // for (const eatery in eateryObj) {
-  //         eateryHTML += Eatery(eatery)
-  //         }
+  
         contentTarget.innerHTML = 
         `
         <h3 class=eateryPreview_Name>Eatery Selected: ${eateryObj.businessName}</h3>
