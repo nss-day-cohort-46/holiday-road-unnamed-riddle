@@ -12,3 +12,43 @@
     display: flex;
     background-color: burlywood;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* eateryComponent Styling */
+.showEateryDetail{
+    display: block;
+    background-color: rgb(173, 187, 208);
+    padding: .5em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
+.showEateryDetail h4 {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}
+.eateryPreview{
+    background-color: rgb(173, 187, 208);
+}
+.eaterySelect{
+    background-color: rgb(173, 187, 208);
+}
+.dropdown{
+    background-color: rgb(173, 187, 208);
+}
