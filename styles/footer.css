@@ -5,3 +5,13 @@
    
   
 }
+.socialLinks{
+    display:flex;
+    justify-content: right;
+}
+footer img {
+
+    padding-bottom: 1px;
+    height: 35px;
+    
+}
