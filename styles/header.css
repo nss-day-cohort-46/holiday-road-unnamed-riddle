@@ -1,0 +1,16 @@
+
+.headerImg {
+    height: 8.5em;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(90%);
+}
+.pageName {
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    color: #bcaf9b;
+    
+}
