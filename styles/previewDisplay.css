@@ -67,7 +67,7 @@
 /* eateryComponent Styling */
 .showEateryDetail{
     display: block;
-    background-color: rgb(173, 187, 208);
+    background-color: rgb(245, 206, 107);
     padding: .5em;
     padding-top: .2em;
     padding-bottom: .2em;
@@ -78,12 +78,12 @@
     line-height: 1em;
 }
 .eateryPreview{
-    background-color: rgb(173, 187, 208);
+    background-color: rgb(245, 206, 107);
 }
 .eaterySelect{
-    background-color: rgb(173, 187, 208);
+    /* background-color: rgb(173, 187, 208); */
 }
 .dropdown{
-    background-color: rgb(173, 187, 208);
+    background-color: rgb(245, 206, 107);
     width: 85%;
 }
