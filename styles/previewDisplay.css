@@ -1,89 +1,89 @@
 /* this hidden rule was added by Dan for the Park Detail section */
 .hidden {
-    display: none;
+  display: none;
 }
 
 .parkPreview {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(184, 184, 184, 0.664);
-    border-radius: 5pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(184, 184, 184, 0.664);
+  border-radius: 5pt;
 }
 
 #parkDetail__Button {
-    width: 90%;
-    margin: .5em 0;
-    text-align: center;
-    border-radius: 5pt;
+  width: 90%;
+  margin: 0.5em 0;
+  text-align: center;
+  border-radius: 5pt;
 }
 
 /* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
 .parkDetail {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(120, 128, 136);
-    border-radius: 5pt;
-    /* padding: .25em; */
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(120, 128, 136);
+  border-radius: 5pt;
+  /* padding: .25em; */
 }
 
 .park__info {
-    margin: .25em;
+  margin: 0.25em;
 }
 
-.park__topicsContainer{
-    columns: auto 2;
-    margin: 0;
+.park__topicsContainer {
+  columns: auto 2;
+  margin: 0;
 }
 
 .park__topicsList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .park__topic {
-    margin: .2em 0;
+  margin: 0.2em 0;
 }
 
 .park__imageContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: rgba(255, 255, 255, .2);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .park__image {
-    width: 95%;
-    margin: 2em auto .5em;
-    border-radius: 2pt;
+  width: 95%;
+  margin: 2em auto 0.5em;
+  border-radius: 2pt;
 }
 
 .park__imageDescription {
-    margin: 0 .8em 0 2em;
-    width: 85%;
+  margin: 0 0.8em 0 2em;
+  width: 85%;
 }
 
 /* eateryComponent Styling */
-.showEateryDetail{
-    display: block;
-    background-color: rgb(245, 206, 107);
-    padding: .5em;
-    padding-top: .2em;
-    padding-bottom: .2em;
+.showEateryDetail {
+  display: block;
+  background-color: rgb(245, 206, 107);
+  padding: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 .showEateryDetail h4 {
-    margin: 0;
-    padding: 0;
-    line-height: 1em;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
 }
-.eateryPreview{
-    background-color: rgb(245, 206, 107);
+.eateryPreview {
+  background-color: rgb(245, 206, 107);
 }
-.eaterySelect{
-    /* background-color: rgb(173, 187, 208); */
+.eaterySelect {
+  /* background-color: rgb(173, 187, 208); */
 }
-.dropdown{
-    background-color: rgb(245, 206, 107);
-    width: 85%;
+.dropdown {
+  background-color: rgb(245, 206, 107);
+  width: 85%;
 }

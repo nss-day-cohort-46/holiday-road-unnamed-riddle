@@ -1,11 +1,9 @@
 import { Attraction } from "./Attraction.js"
-/*
- Bizarrieres
-*/
 
 let _attractions = []
 const _url = "http://holidayroad.nss.team/bizarreries"
 const eventHub = document.querySelector(".mainContainer")
+const targetElement = document.querySelector(".attractionSelect")
 
 
 export const useAttractions = () => _attractions.slice()
@@ -30,44 +28,42 @@ export const LoadAttractions = () => {
 
 
 const _render = (attractionCollection) => {
- const targetElement = document.querySelector(".attractionSelect")
  
  let attractions = attractionCollection.map((attraction) => `<option value=${attraction.id}>${attraction.name}</option>`).join("")
 
   targetElement.innerHTML += `
-    <label for="attraction-select">Bizzararies:</label>
-    <select name="attractions" id="attraction-select" class="selectAttraction">
-      <option value="0" class="test">Select an attraction--</option>
+    <label for="attractionSelect">Bizzararies:</label>
+    <select name="attractions" id="attractionSelect" class="selectAttraction">
+      <option value="0" class="test">Please select an attraction</option>
       ${attractions}
     </select>
     `
-    // <div class="attractionPreview"></div>
-
-  // only fire after options loaded
-  eventHub.addEventListener("change", changeEvent => {
-    
-    // selecting by target.id results
-    if(changeEvent.target.value !== "0" && changeEvent.target.id === "attraction-select") {
-      const customEvent = new CustomEvent("attractionsLoaded", {
-        detail: {
-          attractionsLoaded: true,
-          attractionId: parseInt(changeEvent.target.value)
-        }
-      })
-      eventHub.dispatchEvent(customEvent)
-    } // if
-  }) // eventHub
 } // _render
+
+
+eventHub.addEventListener("change", changeEvent => {
+
+  if(changeEvent.target.id === "attractionSelect") {
+    const customEvent = new CustomEvent("attractionsLoaded", {
+      detail: {
+        attractionsLoaded: true,
+        attractionId: parseInt(changeEvent.target.value)
+      }
+    })
+    eventHub.dispatchEvent(customEvent)
+  } // if
+
+}) // eventHub
 
 
 eventHub.addEventListener ("attractionsLoaded", changeEvent => {
   if(changeEvent.detail.attractionsLoaded) {
-    const attractionId = changeEvent.detail.attractionId
+  
     const targetElement = document.querySelector(".attractionPreview")
-    console.log("taret element")
-    console.log(targetElement)
+    const attractionId = changeEvent.detail.attractionId
     const attraction = useAttractions().find((attraction) => attraction.id === attractionId)
-    
-    targetElement.innerHTML = `${Attraction(attraction)}`
+
+    // remove attraction if user selects 'Please select an attraction'
+    targetElement.innerHTML = !attractionId ? `` : `${Attraction(attraction)}`
   } 
 })
