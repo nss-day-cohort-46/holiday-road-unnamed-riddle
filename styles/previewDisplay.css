@@ -28,21 +28,21 @@
 }
 
 .park__info {
-  margin: 0.25em 0 0.25em 0.25em;
+  margin: 0.25em;
 }
 
-.park__activitiesContainer {
+.park__topicsContainer {
   columns: auto 2;
   margin: 0;
 }
 
-.park_activitiesList {
+.park__topicsList {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.park__activity {
+.park__topic {
   margin: 0.2em 0;
 }
 
@@ -67,7 +67,7 @@
 /* eateryComponent Styling */
 .showEateryDetail {
   display: block;
-  background-color: rgb(173, 187, 208);
+  background-color: rgb(245, 206, 107);
   padding: 0.5em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -78,11 +78,12 @@
   line-height: 1em;
 }
 .eateryPreview {
-  background-color: rgb(173, 187, 208);
+  background-color: rgb(245, 206, 107);
 }
 .eaterySelect {
-  background-color: rgb(173, 187, 208);
+  /* background-color: rgb(173, 187, 208); */
 }
 .dropdown {
-  background-color: rgb(173, 187, 208);
+  background-color: rgb(245, 206, 107);
+  width: 85%;
 }
