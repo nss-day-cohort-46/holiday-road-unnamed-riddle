@@ -1,25 +1,29 @@
 .parkWeather {
-    padding: .1em;
+    margin: .1em;
 
 }
 .weatherList {
     display: flex;
     background-color: rgb(120, 128, 136);
     border-radius: 5pt;
-    
+    justify-content: center;
+    align-content: center;
 }
 .weather {
     display: flex;
-    width: 100%;
-    padding: .25em;
-    font-size: 9pt;
+    width: 20%;
+    margin: .25em;
+    font-size: 10pt;
     text-align: center;
+    justify-content: center;
     align-content: center;
 }
 .weather :hover {
     background-color: whitesmoke;
+    
     border-radius: 5pt;
 }
+
 
 /* this rule targets all h3 tags that children of elements with the class parkWeather -DAN */ 
 .parkWeather >h3 {
