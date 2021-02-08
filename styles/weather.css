@@ -4,11 +4,7 @@
 }
 .weatherList {
     display: flex;
-<<<<<<< HEAD
-    background-color: #3c84a2;
-=======
     background-color: rgb(120, 128, 136);
->>>>>>> 794212dc4ee7aa769e179cc3c3f1c33882260eeb
     border-radius: 5pt;
     justify-content: center;
     align-content: center;
