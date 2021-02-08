@@ -67,18 +67,30 @@
 /* eateryComponent Styling */
 .showEateryDetail{
     display: block;
+    /* flex-direction: column; */
     background-color: rgb(245, 206, 107);
     padding: .5em;
     padding-top: .2em;
     padding-bottom: .2em;
+    
+    align-items: center;
 }
 .showEateryDetail h4 {
-    margin: 0;
+    margin: .5em;
     padding: 0;
     line-height: 1em;
 }
 .eateryPreview{
     background-color: rgb(245, 206, 107);
+    border-radius: 5pt;
+    margin: .5em;
+}
+.eateryPreview_Name{
+    margin: .5em;
+    padding: 0;
+    padding-top: 1em;
+    line-height: 1em;
+    /* padding-left: 1em; */
 }
 .eaterySelect{
     /* background-color: rgb(173, 187, 208); */
@@ -86,4 +98,12 @@
 .dropdown{
     background-color: rgb(245, 206, 107);
     width: 85%;
+}
+#eateryDetailsButton{
+    width: 90%;
+    margin: .5em 0;
+    text-align: center;
+    border-radius: 5pt;
+    align-self: center;
+    margin-left: 1em;
 }

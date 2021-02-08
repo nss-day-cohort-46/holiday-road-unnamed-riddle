@@ -7,11 +7,11 @@
 }
 .socialLinks{
     display:flex;
-    justify-content: right;
+    justify-content: space-between;
 }
 footer img {
 
     padding-bottom: 1px;
-    height: 35px;
+    height: 2em;
     
 }
