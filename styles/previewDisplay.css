@@ -28,21 +28,21 @@
 }
 
 .park__info {
-    margin: .25em 0 .25em .25em;
+    margin: .25em;
 }
 
-.park__activitiesContainer{
+.park__topicsContainer{
     columns: auto 2;
     margin: 0;
 }
 
-.park_activitiesList {
+.park__topicsList {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.park__activity {
+.park__topic {
     margin: .2em 0;
 }
 

@@ -1,14 +1,14 @@
 export const parkHTML = (park, targetHTML) => {
-    let parkActivitiesHTMLString = ''
+    let parkTopicsHTMLString = ''
     let parkEntranceFeeHTMLString = ''
 
     // iterate of array of park activities and generate html to append to dom
-    if (park.activities.length === 0) {
-        parkActivitiesHTMLString = "No Activites Available"
+    if (park.topics.length === 0) {
+        parkTopicsHTMLString = "No Activites Available"
     } else {
-        for (const activity of park.activities) {
-            parkActivitiesHTMLString += `
-            <li class="park__activity">${activity.name}</li>`
+        for (const topic of park.topics) {
+            parkTopicsHTMLString += `
+            <li class="park__topic">${topic.name}</li>`
         }
     }
 
@@ -29,9 +29,9 @@ export const parkHTML = (park, targetHTML) => {
             <div class="park__description"><b>About: </b>${park.description}</div>
             <div class="park__state"><b>State: </b>${park.states}</div>
             <div class="park__fee"><b>Entrance Fee: </b>$${parkEntranceFeeHTMLString}</div>
-            <div class="activityTitle"><b>Activities: </b></div>
-            <div class="park__activitiesContainer">
-                <ul class="park_activitiesList">${parkActivitiesHTMLString}</ul>
+            <div class="activityTitle"><b>Park Topics: </b></div>
+            <div class="park__topicsContainer">
+                <ul class="park__topicsList">${parkTopicsHTMLString}</ul>
             </div>
         </div>
         <div class="park__imageContainer">
