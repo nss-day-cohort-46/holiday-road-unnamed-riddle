@@ -1,23 +1,26 @@
 .parkWeather {
-    padding: .1em;
+    margin: .1em;
 
 }
 .weatherList {
     display: flex;
-    background-color: slategray;
+    background-color: #3c84a2;
     border-radius: 5pt;
-    
+    justify-content: center;
+    align-content: center;
 }
 .weather {
     display: flex;
-    width: 100%;
-    padding: .25em;
-    font-size: 9pt;
+    width: 20%;
+    margin: .25em;
+    font-size: 10pt;
     text-align: center;
+    justify-content: center;
     align-content: center;
 }
 .weather :hover {
     background-color: whitesmoke;
+    
     border-radius: 5pt;
 }
 
