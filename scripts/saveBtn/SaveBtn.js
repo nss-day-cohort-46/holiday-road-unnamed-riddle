@@ -14,7 +14,7 @@ export const Save = () => {
   */
 
  return `
-  <button class="saveBtn" type="submit" style="background-color:red;text-align:center;" disable>Save</button>
+  <button id="saveBtn" type="submit" style="background-color:red;text-align:center;" disable>Save</button>
  `
 } // Save
 
@@ -23,13 +23,15 @@ targetElement.innerHTML += `${Save()}`
 
 eventHub.addEventListener("change", changeEvent => {
 
- const _attractionsSelector = document.querySelector("#attraction-select")
+ const _attractionsSelector = document.querySelector("#attractionSelect")
  const _eateriesSelector = document.querySelector("#eateryDropdown")
  const _parksSelector = document.querySelector("#parkSelect")
- const saveBtn = document.querySelector(".saveBtn")
+ const saveBtn = document.querySelector("#saveBtn")
+
 
  // only allow save if all three selectors have chosen and revert if one is changed back to default
   if(_parksSelector.value !== "0" && _eateriesSelector.value !== "0" && _attractionsSelector.value !== "0") {
+
    const attractionName = _attractionsSelector.options[_attractionsSelector.selectedIndex].text
    const eateryName = _eateriesSelector.options[_eateriesSelector.selectedIndex].text
    const parkName = _parksSelector.options[_parksSelector.selectedIndex].text
@@ -46,7 +48,7 @@ eventHub.addEventListener("change", changeEvent => {
   eventHub.addEventListener("click", clickEvent => {
     clickEvent.preventDefault()
 
-    if (clickEvent.target.type === "submit") {
+    if (clickEvent.target.id === "saveBtn") {
       const customEvent = new CustomEvent("saveClicked", {
         detail: {
           readyToSave: true,
@@ -62,7 +64,7 @@ eventHub.addEventListener("change", changeEvent => {
     Move inline CSS to file.
   */
    saveBtn.innerHTML = `
-    <button class="saveBtn" type="submit" style="background-color:green;text-align:center;" >Save</button>
+    <button id="saveBtn" type="submit" style="background-color:green;text-align:center;" >Save</button>
    `
 
    } else {
@@ -70,7 +72,7 @@ eventHub.addEventListener("change", changeEvent => {
       Disable save if user deselects one of the options.
     */
     saveBtn.innerHTML = `
-    <button class="saveBtn" type="submit" style="background-color:red;text-align:center;" disable>Save</button>
+    <button id="saveBtn" type="submit" style="background-color:red;text-align:center;" disable>Save</button>
     `
   }
 }) // eventHub
@@ -88,12 +90,12 @@ eventHub.addEventListener("saveClicked", clickEvent => {
 
   if (clickEvent.detail.readyToSave) {
 
-  return fetch("http://localhost:8088/itineraries", {
-    method: "POST",
-      headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(clickEvent.detail.selections)
-  }) // fetch
+    return fetch("http://localhost:8088/itineraries", {
+      method: "POST",
+        headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(clickEvent.detail.selections)
+    }) // fetch
   } // if
 }) // eventHub
