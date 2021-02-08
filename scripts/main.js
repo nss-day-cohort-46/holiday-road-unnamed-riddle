@@ -32,7 +32,6 @@ import { WeatherList } from './weather/WeatherList.js';
 import { LoadAttractions } from "./attractions/AttractionProvider.js"
 import "./saveBtn/SaveBtn.js"
 
-
 LoadAttractions()
 
 // CR--------------
