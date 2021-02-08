@@ -1,6 +1,6 @@
 /* this hidden rule was added by Dan for the Park Detail section */
 .hidden {
-    display: none;
+  display: none;
 }
 
 .parkPreview {
@@ -29,40 +29,40 @@
 }
 
 .park__info {
-    margin: .25em;
+  margin: 0.25em;
 }
 
-.park__topicsContainer{
-    columns: auto 2;
-    margin: 0;
+.park__topicsContainer {
+  columns: auto 2;
+  margin: 0;
 }
 
 .park__topicsList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .park__topic {
-    margin: .2em 0;
+  margin: 0.2em 0;
 }
 
 .park__imageContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: rgba(255, 255, 255, .2);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .park__image {
-    width: 95%;
-    margin: 2em auto .5em;
-    border-radius: 2pt;
+  width: 95%;
+  margin: 2em auto 0.5em;
+  border-radius: 2pt;
 }
 
 .park__imageDescription {
-    margin: 0 .8em 0 2em;
-    width: 85%;
+  margin: 0 0.8em 0 2em;
+  width: 85%;
 }
 
 /* eateryComponent Styling */
@@ -93,8 +93,12 @@
     line-height: 1em;
     /* padding-left: 1em; */
 }
-.eaterySelect{
-    /* background-color: rgb(173, 187, 208); */
+.eaterySelect {
+  /* background-color: rgb(173, 187, 208); */
+}
+.dropdown {
+  background-color: rgb(245, 206, 107);
+  width: 85%;
 }
 .dropdown{
     background-color: rgb(128, 181, 156);
