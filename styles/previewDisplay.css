@@ -84,7 +84,7 @@
 .eateryPreview{
     background-color: rgb(188,175,155);
     border-radius: 5pt;
-    /* margin: .5em; */
+    margin: .5em 0;
 }
 .eateryPreview_Name{
     margin: .5em;
@@ -112,4 +112,27 @@
     align-self: center;
     margin-left: 1em;
     background-color: rgb(128, 181, 156);
+}
+
+/* AttractionsPreview Styling */
+.attractionPreview{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: rgb(188,175,155);
+    border-radius: 5pt; 
+    margin: .5em 0;
+}
+#attraction__button{
+    width: 90%;
+    margin: .5em 0;
+    text-align: center;
+    border-radius: 5pt;
+    align-self: center;
+    margin-left: 1em;
+    background-color: rgb(128, 181, 156);
+}
+.attractionPreview section{
+    display: flex;
+    flex-direction: column;
 }

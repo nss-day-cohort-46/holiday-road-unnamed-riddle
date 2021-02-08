@@ -31,10 +31,10 @@ eventHub.addEventListener("click", clickEvent => {
         const parkDetailSection = document.querySelector("#parkDetail")
         parkDetailSection.classList.toggle("parkDetail")
 
-        if (buttonText.innerHTML === "Park Details") {
-            buttonText.innerHTML = "Hide Details"
+        if (buttonText.innerHTML === "Details") {
+            buttonText.innerHTML = "Hide"
         } else {
-            buttonText.innerHTML = "Park Details"
+            buttonText.innerHTML = "Details"
         }
     }
 })
