@@ -1,16 +1,67 @@
-.parkPreview__image {
-  width: 100%;
-}
-
 /* this hidden rule was added by Dan for the Park Detail section */
 .hidden {
   display: none;
 }
 
-/* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
-.showDetail {
+.parkPreview {
   display: flex;
-  background-color: burlywood;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(184, 184, 184, 0.664);
+  border-radius: 5pt;
+}
+
+#parkDetail__Button {
+  width: 90%;
+  margin: 0.5em 0;
+  text-align: center;
+  border-radius: 5pt;
+}
+
+/* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
+.parkDetail {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(120, 128, 136);
+  border-radius: 5pt;
+  /* padding: .25em; */
+}
+
+.park__info {
+  margin: 0.25em 0 0.25em 0.25em;
+}
+
+.park__activitiesContainer {
+  columns: auto 2;
+  margin: 0;
+}
+
+.park_activitiesList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.park__activity {
+  margin: 0.2em 0;
+}
+
+.park__imageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.park__image {
+  width: 95%;
+  margin: 2em auto 0.5em;
+  border-radius: 2pt;
+}
+
+.park__imageDescription {
+  margin: 0 0.8em 0 2em;
+  width: 85%;
 }
 
 /* eateryComponent Styling */
