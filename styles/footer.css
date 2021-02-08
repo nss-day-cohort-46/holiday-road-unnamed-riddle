@@ -1,0 +1,17 @@
+.footerContainer {
+    display: flex;
+   flex-shrink: 0;
+   flex-direction: row;
+   
+  
+}
+.socialLinks{
+    display:flex;
+    justify-content: right;
+}
+footer img {
+
+    padding-bottom: 1px;
+    height: 35px;
+    
+}

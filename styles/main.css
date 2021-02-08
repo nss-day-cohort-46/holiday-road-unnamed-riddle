@@ -3,3 +3,17 @@
 @import "./header.css";
 @import "./previewDisplay.css";
 @import "./weather.css";
+@import "./footer.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.mainContainer {
+  flex: 1;
+}
