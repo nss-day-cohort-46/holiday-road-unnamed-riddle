@@ -36,7 +36,7 @@ const previewPark = (park, targetHTML) => {
     <h3>Park Selected:</h3>
     <div class="parkPreview__name">${park.fullName}</div>
     <div class="parkWeather"></div>
-    <button id="parkDetail__Button">Park Details</button>
+    
     <div id="parkDetail" class="hidden">
         <div class="park__info">
             <div class="park__state"><b>State: </b>${park.states}</div>
@@ -51,7 +51,9 @@ const previewPark = (park, targetHTML) => {
             <div class="park__imageDescription"><b>Photo description: </b>${park.images[0].caption}</div>
         </div>
 
+        
     </div>
+    <button id="parkDetail__Button">Park Details</button>
     `
 
     WeatherList(park)
