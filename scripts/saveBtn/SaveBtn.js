@@ -18,7 +18,7 @@ eventHub.addEventListener("change", changeEvent => {
   /*
     Save button disbled by default.
     Enable save if all 3 selections are made.
-    Save button turns green when enable to save.
+    Save button turns green when enable to save, else remains red.
   */
   const attractionsSelector = document.querySelector("#attractionSelect")
   const eateriesSelector = document.querySelector("#eateryDropdown")
@@ -33,6 +33,9 @@ eventHub.addEventListener("change", changeEvent => {
       }
     }) // customEvent - saveBtnEnabled
     eventHub.dispatchEvent(buttonEnableEvent)
+
+    saveBtn.classList.remove("saveBtn--disabled")
+    saveBtn.classList.remove("saveBtn--saved")
     saveBtn.classList.add("saveBtn--enabled")
   } else {
     targetElement.innerHTML = `${Save()}`
@@ -68,7 +71,6 @@ eventHub.addEventListener("click", clickEvent => {
     }
   })
   eventHub.dispatchEvent(saveItineryEvent)
-  saveBtn.classList.add("saveBtn--saved")
  } // if
 }) // eventHub - clickEvent
 
@@ -81,13 +83,10 @@ eventHub.addEventListener("clickSaveBtn", clickEvent => {
   const saveBtn = document.querySelector("#saveBtn")
 
   if (clickEvent.detail.readyToSave) {
-    /*
-      TODO: SAVE BUTTON SHOULD CHANGE BACK TO GREEN IF 
-        1. Current selections saved.
-        2. User picks a new option from one of the dropdowns.
-        3. There are still 3 selections active. 
-    */
-    saveBtn.classList.add("saveBtn--enabled")
+
+    saveBtn.classList.remove("saveBtn--disabled")
+    saveBtn.classList.remove("saveBtn--enabled")
+    saveBtn.classList.add("saveBtn--saved")
 
     return fetch("http://localhost:8088/itineraries", {
       method: "POST",
