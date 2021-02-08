@@ -18,7 +18,7 @@ eventHub.addEventListener("parkSelected", parkPreviewEvent => {
     }
 })
 
-// previewPark generates html for the preview card
+// previewPark generates html for the selected park and gets weather for that park
 const previewPark = (park, targetHTML) => {
     parkHTML(park, targetHTML)
     WeatherList(park)
