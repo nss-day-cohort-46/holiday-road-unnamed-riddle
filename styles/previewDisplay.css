@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(184, 184, 184, 0.664);
+    background-color: rgb(188,175,155);
     border-radius: 5pt;
 }
 
@@ -16,13 +16,14 @@
     margin: .5em 0;
     text-align: center;
     border-radius: 5pt;
+    background-color: rgb(128, 181, 156);
 }
 
 /* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
 .parkDetail {
     display: flex;
     flex-direction: column;
-    background-color: rgb(120, 128, 136);
+    background-color: rgb(188,175,155);
     border-radius: 5pt;
     /* padding: .25em; */
 }
@@ -68,7 +69,7 @@
 .showEateryDetail{
     display: block;
     /* flex-direction: column; */
-    background-color: rgb(245, 206, 107);
+    background-color: rgb(188,175,155);
     padding: .5em;
     padding-top: .2em;
     padding-bottom: .2em;
@@ -81,9 +82,9 @@
     line-height: 1em;
 }
 .eateryPreview{
-    background-color: rgb(245, 206, 107);
+    background-color: rgb(188,175,155);
     border-radius: 5pt;
-    margin: .5em;
+    /* margin: .5em; */
 }
 .eateryPreview_Name{
     margin: .5em;
@@ -96,7 +97,7 @@
     /* background-color: rgb(173, 187, 208); */
 }
 .dropdown{
-    background-color: rgb(245, 206, 107);
+    background-color: rgb(128, 181, 156);
     width: 85%;
 }
 #eateryDetailsButton{
@@ -106,4 +107,5 @@
     border-radius: 5pt;
     align-self: center;
     margin-left: 1em;
+    background-color: rgb(128, 181, 156);
 }

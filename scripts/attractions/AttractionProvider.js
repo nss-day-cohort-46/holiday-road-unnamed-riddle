@@ -36,7 +36,7 @@ const _render = (attractionCollection) => {
 
   targetElement.innerHTML += `
     <label for="attraction-select">Bizzararies:</label>
-    <select name="attractions" id="attraction-select" class="selectAttraction">
+    <select name="attractions" id="attraction-select" class="selectAttraction dropdown">
       <option value="0" class="test">Select an attraction--</option>
       ${attractions}
     </select>
