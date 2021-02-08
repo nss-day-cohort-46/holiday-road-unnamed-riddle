@@ -6,6 +6,7 @@
     display: flex;
     background-color: rgb(120, 128, 136);
     border-radius: 5pt;
+    
 }
 .weather {
     display: flex;
@@ -13,6 +14,7 @@
     padding: .25em;
     font-size: 9pt;
     text-align: center;
+    align-content: center;
 }
 .weather :hover {
     background-color: whitesmoke;
