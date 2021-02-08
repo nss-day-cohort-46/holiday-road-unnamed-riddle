@@ -9,93 +9,92 @@ const targetElement = document.querySelector(".forSaveBtn")
 const eventHub = document.querySelector(".mainContainer")
 
 export const Save = () => {
-  /*
-    @params - itineryObj - values are user selections
-  */
-
- return `
-  <button id="saveBtn" type="submit" style="background-color:red;text-align:center;" disable>Save</button>
- `
-} // Save
+  return `<button id="saveBtn" class="saveBtn--disabled" type="submit" disabled>Save</button>`
+}
 
 targetElement.innerHTML += `${Save()}`
 
-
 eventHub.addEventListener("change", changeEvent => {
+  /*
+    Save button disbled by default.
+    Enable save if all 3 selections are made.
+    Save button turns green when enable to save.
+  */
+  const attractionsSelector = document.querySelector("#attractionSelect")
+  const eateriesSelector = document.querySelector("#eateryDropdown")
+  const parksSelector = document.querySelector("#parkSelect")
+  const saveBtn = document.querySelector("#saveBtn")
 
- const _attractionsSelector = document.querySelector("#attractionSelect")
- const _eateriesSelector = document.querySelector("#eateryDropdown")
- const _parksSelector = document.querySelector("#parkSelect")
+  if(parksSelector.value !== "0" && eateriesSelector.value !== "0" && attractionsSelector.value !== "0") {
+    saveBtn.disabled = false
+    const buttonEnableEvent = new CustomEvent("saveBtnEnabled", {
+      detail: {
+        saveBtnEnabled: true
+      }
+    }) // customEvent - saveBtnEnabled
+    eventHub.dispatchEvent(buttonEnableEvent)
+    saveBtn.classList.add("saveBtn--enabled")
+  } else {
+    targetElement.innerHTML = `${Save()}`
+  }
+}) // eventHub - changeEvent
+
+
+eventHub.addEventListener("click", clickEvent => {
+  /*
+    Only save if there are selections and save button enabled.
+    Button turns blue after saving.
+  */
  const saveBtn = document.querySelector("#saveBtn")
 
+ if(clickEvent.target.id === "saveBtn" && !saveBtn.disabled) {
+  const attractionsSelector = document.querySelector("#attractionSelect")
+  const eateriesSelector = document.querySelector("#eateryDropdown")
+  const parksSelector = document.querySelector("#parkSelect")
+  const attractionName = attractionsSelector.options[attractionsSelector.selectedIndex].text
+  const eateryName = eateriesSelector.options[eateriesSelector.selectedIndex].text
+  const parkName = parksSelector.options[parksSelector.selectedIndex].text
 
- // only allow save if all three selectors have chosen and revert if one is changed back to default
-  if(_parksSelector.value !== "0" && _eateriesSelector.value !== "0" && _attractionsSelector.value !== "0") {
-
-   const attractionName = _attractionsSelector.options[_attractionsSelector.selectedIndex].text
-   const eateryName = _eateriesSelector.options[_eateriesSelector.selectedIndex].text
-   const parkName = _parksSelector.options[_parksSelector.selectedIndex].text
-
-    const itinery = {
-      attractionName,
-      eateryName,
-      parkName
-    }
-
-  /*
-    Only allow submission if all all selected.
-  */
-  eventHub.addEventListener("click", clickEvent => {
-    clickEvent.preventDefault()
-
-    if (clickEvent.target.id === "saveBtn") {
-      const customEvent = new CustomEvent("saveClicked", {
-        detail: {
-          readyToSave: true,
-          selections: itinery
-        }
-      }) // customEvent
-      eventHub.dispatchEvent(customEvent)
-    } // if
-  }) // eventHub
-
-
-  /*
-    Move inline CSS to file.
-  */
-   saveBtn.innerHTML = `
-    <button id="saveBtn" type="submit" style="background-color:green;text-align:center;" >Save</button>
-   `
-
-   } else {
-    /*
-      Disable save if user deselects one of the options.
-    */
-    saveBtn.innerHTML = `
-    <button id="saveBtn" type="submit" style="background-color:red;text-align:center;" disable>Save</button>
-    `
+  const itinery = {
+    attractionName,
+    eateryName,
+    parkName
   }
-}) // eventHub
+
+  const saveItineryEvent = new CustomEvent("clickSaveBtn", {
+    detail: {
+      readyToSave: true,
+      itinery: itinery
+    }
+  })
+  eventHub.dispatchEvent(saveItineryEvent)
+  saveBtn.classList.add("saveBtn--saved")
+ } // if
+}) // eventHub - clickEvent
 
 
-/*
-  Save to json
-*/
-eventHub.addEventListener("saveClicked", clickEvent => {
-
+eventHub.addEventListener("clickSaveBtn", clickEvent => {
   /*
     json-server -p 8088 -w db.json
     http://localhost:8088/itineraries
   */
+  const saveBtn = document.querySelector("#saveBtn")
 
   if (clickEvent.detail.readyToSave) {
+    /*
+      TODO: SAVE BUTTON SHOULD CHANGE BACK TO GREEN IF 
+        1. Current selections saved.
+        2. User picks a new option from one of the dropdowns.
+        3. There are still 3 selections active. 
+    */
+    saveBtn.classList.add("saveBtn--enabled")
 
     return fetch("http://localhost:8088/itineraries", {
       method: "POST",
         headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(clickEvent.detail.selections)
+      body: JSON.stringify(clickEvent.detail.itinery)
     }) // fetch
   } // if
 }) // eventHub

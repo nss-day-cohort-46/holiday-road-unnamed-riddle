@@ -1,0 +1,15 @@
+#saveBtn {
+  text-align: center;
+}
+
+.saveBtn--disabled {
+  background: red;
+}
+
+.saveBtn--enabled {
+  background: green;
+}
+
+.saveBtn--saved {
+  background: blue;
+}
