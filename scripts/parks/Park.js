@@ -26,6 +26,7 @@ export const parkHTML = (park, targetHTML) => {
     
     <div id="parkDetail" class="hidden">
         <div class="park__info">
+            <div class="park__description"><b>About: </b>${park.description}</div>
             <div class="park__state"><b>State: </b>${park.states}</div>
             <div class="park__fee"><b>Entrance Fee: </b>$${parkEntranceFeeHTMLString}</div>
             <div class="activityTitle"><b>Activities: </b></div>
