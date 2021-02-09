@@ -27,6 +27,18 @@ eventHub.addEventListener("change", changeEvent => {
 
   if(parksSelector.value !== "0" && eateriesSelector.value !== "0" && attractionsSelector.value !== "0") {
     saveBtn.disabled = false
+    console.log("The three selections ")
+      const attractionsSelector = document.querySelector("#attractionSelect")
+  const eateriesSelector = document.querySelector("#eateryDropdown")
+  const parksSelector = document.querySelector("#parkSelect")
+  const attractionName = attractionsSelector.options[attractionsSelector.selectedIndex].text
+  const eateryName = eateriesSelector.options[eateriesSelector.selectedIndex].text
+  const parkName = parksSelector.options[parksSelector.selectedIndex].text
+
+  console.log("\t", parkName)
+  console.log("\t", eateryName)
+  console.log("\t", attractionName)
+  console.log("\n")
     const buttonEnableEvent = new CustomEvent("saveBtnEnabled", {
       detail: {
         saveBtnEnabled: true
@@ -59,10 +71,13 @@ eventHub.addEventListener("click", clickEvent => {
   const parkName = parksSelector.options[parksSelector.selectedIndex].text
 
   const itinery = {
-    attractionName,
+    parkName,
     eateryName,
-    parkName
+    attractionName
   }
+
+  console.log("itinerty to save")
+  console.table(itinery)
 
   const saveItineryEvent = new CustomEvent("clickSaveBtn", {
     detail: {
