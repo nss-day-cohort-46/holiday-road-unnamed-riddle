@@ -4,6 +4,8 @@
 
   const targetElement = document.querySelector(".mainContainer")
 */
+// import { ItineraryList } from "./savedItineray/DisplayItinerary.js"
+import { ItineraryList } from "../savedItineray/DisplayItinerary.js"
 
 const targetElement = document.querySelector(".previewSaveButton")
 const eventHub = document.querySelector(".mainContainer")
@@ -89,12 +91,15 @@ eventHub.addEventListener("clickSaveBtn", clickEvent => {
     saveBtn.classList.remove("saveBtn--enabled")
     saveBtn.classList.add("saveBtn--saved")
 
+
     return fetch("http://localhost:8088/itineraries", {
       method: "POST",
         headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(clickEvent.detail.itinery)
+    }).then(() => {
+      ItineraryList()
     }) // fetch
   } // if
 }) // eventHub
