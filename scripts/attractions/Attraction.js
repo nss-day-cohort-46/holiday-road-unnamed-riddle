@@ -3,7 +3,6 @@ const eventHub = document.querySelector('.mainContainer')
 export const Attraction = (attraction) => {
  return `
  <section id=${attraction.id}>
-  <h3>Attraction</h3>
   <div>
    <p>${attraction.name}</p>
    <div id="attractionDetail" class="hidden showAttractionDetail">

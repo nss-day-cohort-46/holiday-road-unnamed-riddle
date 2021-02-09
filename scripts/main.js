@@ -21,10 +21,10 @@ import './eateries/EateryPreview.js'
 // Alex Prieu Code 
 import { getWeather } from "./weather/WeatherProvider.js";
 import { WeatherList } from './weather/WeatherList.js';
-import { ItineraryList } from "./savedItineray/DisplayItinerary.js"
+// import { ItineraryList } from "./savedItineray/DisplayItinerary.js"
 // getWeather()
 // WeatherList()
-ItineraryList()
+// ItineraryList()
 
 
 
@@ -32,6 +32,7 @@ ItineraryList()
 
 // Cheo Roman
 import { LoadAttractions } from "./attractions/AttractionProvider.js"
+import "./saveBtn/SaveBtn.js"
 
 
 LoadAttractions()
