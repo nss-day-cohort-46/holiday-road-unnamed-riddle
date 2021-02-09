@@ -5,7 +5,7 @@
   const targetElement = document.querySelector(".mainContainer")
 */
 
-const targetElement = document.querySelector(".forSaveBtn")
+const targetElement = document.querySelector(".previewSaveButton")
 const eventHub = document.querySelector(".mainContainer")
 
 export const Save = () => {
