@@ -4,27 +4,28 @@
 }
 
 .parkPreview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(184, 184, 184, 0.664);
-  border-radius: 5pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(188,175,155);
+    border-radius: 5pt;
 }
 
 #parkDetail__Button {
-  width: 90%;
-  margin: 0.5em 0;
-  text-align: center;
-  border-radius: 5pt;
+    width: 90%;
+    margin: .5em 0;
+    text-align: center;
+    border-radius: 5pt;
+    background-color: rgb(128, 181, 156);
 }
 
 /* this rule was added by Dan. It toggles when the Show Detail button is cliced on parks */
 .parkDetail {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(120, 128, 136);
-  border-radius: 5pt;
-  /* padding: .25em; */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(188,175,155);
+    border-radius: 5pt;
+    /* padding: .25em; */
 }
 
 .park__info {
@@ -65,20 +66,32 @@
 }
 
 /* eateryComponent Styling */
-.showEateryDetail {
-  display: block;
-  background-color: rgb(245, 206, 107);
-  padding: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+.showEateryDetail{
+    display: block;
+    /* flex-direction: column; */
+    background-color: rgb(188,175,155);
+    padding: .5em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    
+    align-items: center;
 }
 .showEateryDetail h4 {
-  margin: 0;
-  padding: 0;
-  line-height: 1em;
+    margin: .5em;
+    padding: 0;
+    line-height: 1em;
 }
-.eateryPreview {
-  background-color: rgb(245, 206, 107);
+.eateryPreview{
+    background-color: rgb(188,175,155);
+    border-radius: 5pt;
+    margin: .5em 0;
+}
+.eateryPreview_Name{
+    margin: .5em;
+    padding: 0;
+    padding-top: 1em;
+    line-height: 1em;
+    /* padding-left: 1em; */
 }
 .eaterySelect {
   /* background-color: rgb(173, 187, 208); */
@@ -88,6 +101,42 @@
 .attractionPreview {
   background-color: rgb(245, 206, 107);
   width: 85%;
+}
+.dropdown{
+    background-color: rgb(128, 181, 156);
+    width: 85%;
+}
+#eateryDetailsButton{
+    width: 90%;
+    margin: .5em 0;
+    text-align: center;
+    border-radius: 5pt;
+    align-self: center;
+    margin-left: 1em;
+    background-color: rgb(128, 181, 156);
+}
+
+/* AttractionsPreview Styling */
+.attractionPreview{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: rgb(188,175,155);
+    border-radius: 5pt; 
+    margin: .5em 0;
+}
+#attraction__button{
+    width: 90%;
+    margin: .5em 0;
+    text-align: center;
+    border-radius: 5pt;
+    align-self: center;
+    margin-left: 1em;
+    background-color: rgb(128, 181, 156);
+}
+.attractionPreview section{
+    display: flex;
+    flex-direction: column;
 }
 
 /* added css for saved Itineraries by AP */

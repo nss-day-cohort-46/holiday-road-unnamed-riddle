@@ -14,7 +14,11 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  margin: 0;
+  background-color: rgb(26, 84, 123);
+  /* padding: .5em; */
 }
 .mainContainer {
   flex: 1;
+  margin: 0 0.5em;
 }

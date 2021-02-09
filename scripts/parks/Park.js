@@ -42,6 +42,6 @@ export const parkHTML = (park, targetHTML) => {
 
         
     </div>
-    <button id="parkDetail__Button">Park Details</button>
+    <button id="parkDetail__Button">Details</button>
     `
 }
