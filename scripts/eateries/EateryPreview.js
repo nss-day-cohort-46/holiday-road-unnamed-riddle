@@ -44,7 +44,7 @@ eventHub.addEventListener("click", event => {
     eateryDetail.classList.toggle("showEateryDetail")
 
     if(buttonText.innerHTML === "Details"){
-      buttonText.innerHTML = "Hide Details"
+      buttonText.innerHTML = "Hide"
     } else {
       buttonText.innerHTML = "Details"
     }

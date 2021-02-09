@@ -4,7 +4,7 @@
 }
 .weatherList {
     display: flex;
-    background-color: rgb(120, 128, 136);
+    background-color: rgb(196, 240, 220);
     border-radius: 5pt;
     justify-content: center;
     align-content: center;
@@ -12,7 +12,7 @@
 .weather {
     display: flex;
     width: 20%;
-    margin: .25em;
+    margin: .25em 0;
     font-size: 10pt;
     text-align: center;
     justify-content: center;
