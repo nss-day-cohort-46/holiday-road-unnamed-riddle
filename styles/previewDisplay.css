@@ -83,7 +83,9 @@
 .eaterySelect {
   /* background-color: rgb(173, 187, 208); */
 }
-.dropdown {
+.dropdown,
+.selectAttraction,
+.attractionPreview {
   background-color: rgb(245, 206, 107);
   width: 85%;
 }
