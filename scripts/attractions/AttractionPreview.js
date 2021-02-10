@@ -1,35 +1,15 @@
-// import { Attraction } from "./Attraction.js"
+import { Attraction } from "./Attraction.js"
 
-// const eventHub = document.querySelector('.mainContainer')
-// const targetElement = document.querySelector('.attractionPreview')
+const eventHub = document.querySelector(".mainContainer")
 
-// eventHub.addEventListener ("attractionsLoaded", changeEvent => {
-//   console.log('in evenhubt')
-//   if(changeEvent.detail.attractionsLoaded) {
-//     console.log("in attracions loaded")
-//     // const targetElement = document.querySelector(".attractionPreview")
-//     const attractionId = changeEvent.detail.attractionId
-//     const attraction = useAttractions().find((attraction) => attraction.id === attractionId)
+eventHub.addEventListener("attractionSelectionEvent", selectEvent => {
+ /*
+  Only add detail card if selection is not 0 - default value.
+ */
+ const targetEvent = document.querySelector(".attractionPreview")
+ const attraction = selectEvent.detail.attractionObj
+ const isNotDefaultSelection = selectEvent.detail.isNotDefault
+ 
+ targetEvent.innerHTML = isNotDefaultSelection ? `${Attraction(attraction)}` : ``
 
-//     targetElement.innerHTML = !attractionId ? `` : `${Attraction(attraction)}`
-//   } 
-// })
-// eventHub.addEventListener ("attractionsLoaded", changeEvent => {
-//   if(changeEvent.detail.attractionsLoaded) {
-//     const attractionId = changeEvent.detail.attractionId
-//     // const targetElement = document.querySelector(".attractionPreview")
-//     const attraction = useAttractions().find((attraction) => attraction.id === attractionId)
-    
-//     contentTarget.innerHTML = `${Attraction(attraction)}`
-//   } 
-// })
-
-// eventHub.addEventListener ("attractionsLoaded", changeEvent => {
-//   if(changeEvent.detail.attractionsLoaded) {
-//     const attractionId = changeEvent.detail.attractionId
-//     const targetElement = document.querySelector(".attractionPreview")
-//     const attraction = useAttractions().find((attraction) => attraction.id === attractionId)
-    
-//     targetElement.innerHTML = `${Attraction(attraction)}`
-//   } 
-// })
+}) // eventHub - attractionSelectionEvent
