@@ -1,15 +1,28 @@
-#saveBtn {
+:root {
+  --is-disabled: rgb(188, 175, 155);
+  --is-enabled: rgb(196, 240, 220);
+  --is-saved: rgb(128, 181, 156);
+}
+
+.saveBtn--defaults {
+  display: block;
   text-align: center;
+  padding: 0.2em;
+  width: 50%;
+  border-radius: 15px;
+  padding: 0.5em;
+  margin: 0 auto;
 }
 
 .saveBtn--disabled {
-  background: red;
+  background: var(--is-disabled);
+  border: 0.2em solid rgb(245, 206, 107);
 }
 
 .saveBtn--enabled {
-  background: green;
+  background: var(--is-enabled);
 }
 
 .saveBtn--saved {
-  background: blue;
+  background: var(--is-saved);
 }
