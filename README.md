@@ -26,7 +26,7 @@ This app caters to people like Brittany (see below), who enjoys being outdoors a
 
 ![Persona](./images/persona-brittany.png?raw=true "Persona")
 
-![Wireframe](./images/wireframe.png?raw=true "Wireframe")
+![Wireframe](./images/ExportBoard.png?raw=true "Wireframe")
 
 ![Diagram](./images/diagramDraft.png?raw=true "Diagram")
 
