@@ -4,17 +4,21 @@
 
   const targetElement = document.querySelector(".mainContainer")
 */
-// import { ItineraryList } from "./savedItineray/DisplayItinerary.js"
+
 import { ItineraryList } from "../savedItineray/DisplayItinerary.js"
 
 const targetElement = document.querySelector(".previewSaveButton")
 const eventHub = document.querySelector(".mainContainer")
 
 export const Save = () => {
-  return `<button id="saveBtn" class="saveBtn--disabled" type="submit" disabled>Save</button>`
+  return `<button id="saveBtn" class="saveBtn--defaults saveBtn--disabled" type="submit" disabled>Save</button>`
 }
 
+/*
+Automatically loads button on import of file.
+*/
 targetElement.innerHTML += `${Save()}`
+
 
 eventHub.addEventListener("change", changeEvent => {
   /*
@@ -41,6 +45,9 @@ eventHub.addEventListener("change", changeEvent => {
     saveBtn.classList.remove("saveBtn--saved")
     saveBtn.classList.add("saveBtn--enabled")
   } else {
+    /*
+      Disable save functionality since user selected a default.
+    */
     targetElement.innerHTML = `${Save()}`
   }
 }) // eventHub - changeEvent
@@ -91,7 +98,7 @@ eventHub.addEventListener("clickSaveBtn", clickEvent => {
     saveBtn.classList.remove("saveBtn--enabled")
     saveBtn.classList.add("saveBtn--saved")
 
-
+    // targetElement.innerHTML = `${Save("Saved", "saved", false)}`
     return fetch("http://localhost:8088/itineraries", {
       method: "POST",
         headers: {

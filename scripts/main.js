@@ -31,10 +31,7 @@ import { WeatherList } from './weather/WeatherList.js';
 // AP--------------
 
 // Cheo Roman
-import { LoadAttractions } from "./attractions/AttractionProvider.js"
+import "./attractions/AttractionProvider.js"
 import "./saveBtn/SaveBtn.js"
-
-
-LoadAttractions()
 
 // CR--------------
