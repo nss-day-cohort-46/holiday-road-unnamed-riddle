@@ -24,11 +24,12 @@ This app caters to people like Brittany (see below), who enjoys being outdoors a
 - Once the user has selected a park, a bizarre attraction, and an eatery, the _Save Itinerary_ button should be enabled.
 - When the user clicks the _Save Itinerary_ button, the chosen items should be saved as an object in your own, local API that is managed by `json-server`. Each saved itinerary should appear in an aside bar on the right side of the UI.
 
-![Persona](./images/persona-brittany.png?raw=true "Persona")
+|                                             Gif Animation                                              |                                           Wireframe                                           |
+| :----------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
+| <img src="./images/holiday-road-screen-recording.gif" alt="Gif of project" width="400" height="600" /> | <img src="./images/ExportBoard.png" alt="Holiday Road Wireframe" width="900" height="1500" /> |
 
-![Wireframe](./images/ExportBoard.png?raw=true "Wireframe")
-
-![Diagram](./images/diagramDraft.png?raw=true "Diagram")
+<img src="./images/persona-brittany.png" alt="Image of customer background" />
+<img src="./images/diagramDraft.png" alt="Image of project diagram"/>
 
 # Holiday Road from Nashville
 
